@@ -1,3 +1,4 @@
+//Initial Player Stats
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -6,6 +7,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
+//Translating 
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -118,6 +120,7 @@ function goCave() {
   update(locations[2]);
 }
 
+//Takes take gold and gives 10 health
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
@@ -129,6 +132,7 @@ function buyHealth() {
   }
 }
 
+//If player does not have max wpeaon 
 function buyWeapon() {
   if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
@@ -149,6 +153,7 @@ function buyWeapon() {
   }
 }
 
+//If player has final weapon, player is given the option to sell his previuos weapons
 function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
