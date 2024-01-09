@@ -1,0 +1,85 @@
+*{
+    font-family:'Times New Roman';
+}
+
+body, h1 {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a23;
+    color: white;
+    animation: colorChange 3s infinite alternate;
+  }
+  
+/* Centering the container */
+#container {
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center;
+margin-top: 150px;
+}
+
+/* Styling the title */
+#text {
+font-size: 28px;
+margin-bottom: 40px;
+font-family: 'Arial', sans-serif;
+color: #333; /* Adjust the color as needed */
+}
+
+/* Styling the input */
+input {
+padding: 10px;
+border-radius: 2px;
+border: 2px solid #999;
+font-size: 18px;
+width: 250px;
+max-width: 80%; /* Adjust the maximum width as needed */
+background-color: #0a0a23;
+margin: 10px;
+color: white;
+text-align: center;
+}
+
+/* Adding a bit of hover effect to the input */
+input:hover {
+border-color: #666;
+}
+
+button {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: #feac32;
+    background-image: linear-gradient(#fecc4c, #ffac33);
+    border: 3px solid #feac32;
+    border-radius: 2px;
+    padding: 10px 40px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: blue;
+    background-image: linear-gradient(red, blue);
+    border: 3px solid blue;
+    transition: 1s;
+    color: white;
+  }
+
+p {
+font-family: 'Arial', sans-serif;
+font-size: 20px;
+line-height: 1.6;
+max-width: 400px; /* Text color */
+margin-bottom: 20px; /* Space between paragraphs */
+color:rgb(146, 58, 58);
+animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+      color: #881919; 
+    }
+    100% {
+      color: #bd8585;
+    }
+  }

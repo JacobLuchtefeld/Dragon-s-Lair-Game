@@ -216,9 +216,10 @@ function goFight() {
 }
 
 function attack() {
-  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  const damage = getMonsterAttackValue(monsters[fighting].level);
+  text.innerText = "The " + monsters[fighting].name + " attacks and deals " + damage + " damage.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  health -= getMonsterAttackValue(monsters[fighting].level);
+  health -= damage;
   if (isMonsterHit()) {
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
   } else {
@@ -240,7 +241,7 @@ function attack() {
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
-  return hit > 0 ? hit : 0;
+  return hit > 0 ? hit : 0; //Prevents player from gaining health from monster
 }
 
 function isMonsterHit() {
@@ -249,6 +250,7 @@ function isMonsterHit() {
 
 function dodge() {
   text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+
 }
 
 function defeatMonster() {

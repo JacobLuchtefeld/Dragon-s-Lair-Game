@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./info.css">
     <title>RPG - Dragon Repeller</title>
-  </head>
-  <body>
-    <div id="container">
-      <div id="game">
-        <fieldset>
-          <legend>Dragon Repeller</legend>
-          <div id="stats">
-              <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
-              <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-              <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
-          </div>
-          <div id="controls">
-              <button class="button" id="button1">Go to store</button>
-              <button class="button" id="button2">Go to cave</button>
-              <button class="button" id="button3">Fight dragon</button>
-          </div>
-          <div id="monsterStats">
-              <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-              <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-          </div>
-          <div id="text">
-              Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
-          </div>
-        </fieldset>
-        <img id="img" src="images/Townsqaure.png">
-      </div>
-    </div>
-    <script src="./script.js"></script>
-  </body>
+</head>
+<body>
+  <div id="container">
+    <h1 id="text1">Welcome to Drapon Repeller</h1>
+    <input id="playerName" placeholder="Enter your name..." required>
+    <button id="startGame" type="submit" link="info.html">Start Game</button>
+    <p>
+      In the realm of Eldoria, Arvindor city suffers beneath the rule of Igniscale, an ancient dragon guarding a powerful relic. 
+      Fear grips the villagers as they long for liberation. You, a destined hero known as the Dragon Repeller, answer the call. 
+      With bravery as your guide, you venture forth to free the city, confront Igniscale, and restore Arvindor's lost glory.
+      Armed with courage and determination, your journey unfolds, intertwining your destiny with the city's as you prepare 
+      for an epic battle to bring peace and freedom back to Arvindor.</p>
+  </div>
+</body>
+<script src="index.js"></script>
 </html>
