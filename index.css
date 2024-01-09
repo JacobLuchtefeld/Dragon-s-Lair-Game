@@ -1,3 +1,11 @@
+*{
+  font-size: 20px;
+}
+
+body{
+  background-color: #0a0a23;
+}
+
 #text {
   background-color: #0a0a23;
   color: #ffffff;
@@ -7,7 +15,7 @@
   display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
-  min-height: 100vh; /* Ensures the container takes at least the height of the viewport */
+  min-height: 80vh; /* Ensures the container takes at least the height of the viewport */
   background-color: #0a0a23;
 }
 #game {
@@ -21,7 +29,6 @@
 #stats {
   padding: 5px;
   color: white;
-  
 }
 
 #stats{
@@ -60,6 +67,7 @@ button {
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
   border-radius: 2px;
+  margin: 2px
 }
 
 button:hover {
