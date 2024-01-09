@@ -8,6 +8,7 @@ let monsterHealth;
 let inventory = ["stick"];
 
 //Translating 
+const img = document.getElementById("img");
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -42,53 +43,75 @@ const monsters = [
   }
 ]
 const locations = [
-  {
+  { //locations[0]
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: "You are in the town square. You see a sign that says \"Store\".",
+    img: "images/Townsqaure.png"
   },
-  {
+  { //locations[1]
     name: "store",
     "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store."
+    text: "You enter the store.",
+    img: "images/Shop.png"
   },
-  {
+  { //locations[2]
     name: "cave",
     "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
+    text: "You enter the cave. You see some monsters.",
+    img: "images/Cave.png"
   },
-  {
-    name: "fight",
+  { //locations[3]
+    name: "fightSlime",
     "button text": ["Attack", "Dodge", "Run"],
     "button functions": [attack, dodge, goTown],
-    text: "You are fighting a monster."
+    text: "You go through the first path and find a Slime.",
+    img: "images/Slime.png"
   },
-  {
+  { //locations[4]
+    name: "fightBeast",
+    "button text": ["Attack", "Dodge", "Run"],
+    "button functions": [attack, dodge, goTown],
+    text: "You go through the second path and find a Beast.",
+    img: "images/Beast.png"
+  },
+  { //locations[5]
+    name: "fightDragon",
+    "button text": ["Attack", "Dodge", "Run"],
+    "button functions": [attack, dodge, goTown],
+    text: "You approach the Dragon.",
+    img: "images/Dragon.png"
+  },
+  { //locations[6]
     name: "kill monster",
     "button text": ["Go to cave", "Go to town square", "Go to town square"],
     "button functions": [goCave, goTown, easterEgg],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.',
+    img: "images/ExpandGold.png"
   },
-  {
+  { //locations[7]
     name: "lose",
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
-    text: "You die. ☠️"
+    text: "You perished fighting a monster. ☠️",
+    img: "images/YouDied.png"
   },
-  { 
+  { //locations[8]
     name: "win", 
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉",
+    img: "images/YouWin.png"
   },
-  {
+  { //locations[9]
     name: "easter egg",
     "button text": ["2", "8", "Go to town square?"],
     "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!",
+    img: "images/EasterEgg.png"
   }
 ];
 
@@ -106,6 +129,7 @@ function update(location) {
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
+  img.src=location.img;
 }
 
 function goTown() {
@@ -167,22 +191,24 @@ function sellWeapon() {
 }
 
 function fightSlime() {
+  update(locations[3]);
   fighting = 0;
   goFight();
 }
 
 function fightBeast() {
+  update(locations[4]);
   fighting = 1;
   goFight();
 }
 
 function fightDragon() {
+  update(locations[5]);
   fighting = 2;
   goFight();
 }
 
 function goFight() {
-  update(locations[3]);
   monsterHealth = monsters[fighting].health;
   monsterStats.style.display = "block";
   monsterName.innerText = monsters[fighting].name;
@@ -230,15 +256,15 @@ function defeatMonster() {
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
-  update(locations[4]);
+  update(locations[6]);
 }
 
 function lose() {
-  update(locations[5]);
+  update(locations[7]);
 }
 
 function winGame() {
-  update(locations[6]);
+  update(locations[8]);
 }
 
 function restart() {
@@ -254,7 +280,7 @@ function restart() {
 }
 
 function easterEgg() {
-  update(locations[7]);
+  update(locations[9]);
 }
 
 function pickTwo() {

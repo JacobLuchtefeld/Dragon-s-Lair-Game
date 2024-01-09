@@ -1,6 +1,0 @@
-{
-    "docify.commentService.sidePanelReviewMode": false,
-    "docify.commentService.moreExpressiveComments": false,
-    "docify.commentService.inlineComments": false,
-    "docify.commentService.docstringFormat": "XML"
-}
